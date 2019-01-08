@@ -1,0 +1,34 @@
+.List {
+    border: 1px solid #ffbb42;
+    width: 300px;
+    margin-left: 50%;
+    text-align: start;
+    transform: translateX(-50%);
+}
+
+.List p {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.List span {
+    margin-left: 20px;
+}
+.removeBtn {
+    float: right;
+    margin: 12px 22px 0 0;
+    border: none;
+    background: #fff;
+}
+
+.removeBtn::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f2ed";
+    font-size: 20px;
+    color: #ffbb42;
+
+}
+.Wrapper p {
+    text-align: center;
+}
