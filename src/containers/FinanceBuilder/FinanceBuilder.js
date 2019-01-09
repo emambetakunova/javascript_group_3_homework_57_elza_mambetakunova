@@ -49,9 +49,11 @@ class FinanceBuilder extends Component {
         this.setState({itemCost: ''})
     };
 
-    removeItem = id => {
-        const index = this.state.items.findIndex(p => p.id === id);
+    removeItem = text => {
         const allTask = [...this.state.items];
+        const index = allTask.findIndex((item) => {
+            return item.text === text
+        });
         allTask.splice(index, 1);
 
         this.setState({items: allTask});
@@ -67,7 +69,7 @@ class FinanceBuilder extends Component {
                     key={item.text}
                     text={item.text}
                     price={item.price}
-                    remove={() => this.removeItem(item.id)}
+                    remove={() => this.removeItem(item.text)}
                 />
             ));
         }
