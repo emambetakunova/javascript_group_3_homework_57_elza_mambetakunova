@@ -19,7 +19,7 @@ class FinanceBuilder extends Component {
 
     calculateTotal = () => {
         return this.state.items.reduce((sum, item) => {
-            return sum + item.price
+            return sum + parseInt(item.price)
         }, 0);
     };
 
@@ -41,8 +41,8 @@ class FinanceBuilder extends Component {
     };
 
     changeHandlerCost = event => {
-        const cost = event.target.value;
-        this.setState({itemCost: Number(cost)});
+        let number = parseInt(event.target.value);
+        if (number >= 0) this.setState({itemCost: event.target.value})
     };
 
     focusHandlerCost = () => {
@@ -73,7 +73,6 @@ class FinanceBuilder extends Component {
                 />
             ));
         }
-
         return (
             <div className="Wrapper">
                 <Item
